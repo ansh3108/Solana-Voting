@@ -9,7 +9,11 @@ pub mod voting {
     use super::*;
 
     pub fn initialize_poll(ctx: Context<InitializePoll>,
-                             poll_id: u64) -> Result<()> {
+                             poll_id: u64,
+                             description:String,
+                             poll_start: u64,
+                             pol_end: u64)-> Result<()> {
+        let poll = &mut ctx.accounts.poll;
         Ok(())
     }
 }
