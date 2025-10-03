@@ -79,7 +79,9 @@ describe('Voting', () => {
   });
 
   it("vote", async() => {
-    
+    await votingProgram.methods
+      .vote()
+      .rpc()
   });
 
 

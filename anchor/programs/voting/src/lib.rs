@@ -4,7 +4,7 @@ use anchor_lang::prelude::*;
 
 declare_id!("Count3AcZucFDPSFBAeHkQ6AvttieKUkyJ8HiQGhQwe");
 
-#[program]
+#[program] //fix here
 pub mod voting {
     use super::*;
 
@@ -26,16 +26,12 @@ pub mod voting {
     pub fn initialize_candidate(ctx: Context<InitializeCandidate>,
                                 _candidate_name: String,
                                 _poll_id: u64) -> Result<()>{
-
-        let candidate = &mut ctx.accounts.candidate;
-        candidate.candidate_name = _candidate_name;
-        let poll = &mut ctx.accounts.poll;
-        poll.candidate_amount += 1;
-        candidate.candidate_votes = 0;
+        ctx.accounts.candidate_account.candidate_name = candidate;
+        ctx.accounts.poll_account.poll_option_index += 1;
         Ok(())
     }
     
-    pub fn vote(ctx: Context<Vote>, candidate_name: String, _poll_id: u64) -> Result<()> {
+    pub fn vote(ctx: Context<Vote>, _candidate_name: String, _poll_id: u64) -> Result<()> {
         let candidate = &mut ctx.accounts.candidate;
         candidate.candidate_votes +=1;
         Ok(())
