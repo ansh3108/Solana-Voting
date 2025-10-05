@@ -27,11 +27,6 @@ export type Voting = {
       ],
       "accounts": [
         {
-          "name": "signer",
-          "writable": true,
-          "signer": true
-        },
-        {
           "name": "poll",
           "writable": true,
           "pda": {
@@ -60,18 +55,23 @@ export type Voting = {
           }
         },
         {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
           "name": "systemProgram",
           "address": "11111111111111111111111111111111"
         }
       ],
       "args": [
         {
-          "name": "candidateName",
-          "type": "string"
-        },
-        {
           "name": "pollId",
           "type": "u64"
+        },
+        {
+          "name": "candidateName",
+          "type": "string"
         }
       ]
     },
@@ -89,11 +89,6 @@ export type Voting = {
       ],
       "accounts": [
         {
-          "name": "signer",
-          "writable": true,
-          "signer": true
-        },
-        {
           "name": "poll",
           "writable": true,
           "pda": {
@@ -104,6 +99,11 @@ export type Voting = {
               }
             ]
           }
+        },
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
         },
         {
           "name": "systemProgram",
@@ -148,6 +148,7 @@ export type Voting = {
         },
         {
           "name": "poll",
+          "writable": true,
           "pda": {
             "seeds": [
               {
@@ -159,6 +160,7 @@ export type Voting = {
         },
         {
           "name": "candidate",
+          "writable": true,
           "pda": {
             "seeds": [
               {

@@ -21,11 +21,6 @@
       ],
       "accounts": [
         {
-          "name": "signer",
-          "writable": true,
-          "signer": true
-        },
-        {
           "name": "poll",
           "writable": true,
           "pda": {
@@ -54,18 +49,23 @@
           }
         },
         {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
           "name": "system_program",
           "address": "11111111111111111111111111111111"
         }
       ],
       "args": [
         {
-          "name": "candidate_name",
-          "type": "string"
+          "name": "poll_id",
+          "type": "u64"
         },
         {
-          "name": "_poll_id",
-          "type": "u64"
+          "name": "candidate_name",
+          "type": "string"
         }
       ]
     },
@@ -83,11 +83,6 @@
       ],
       "accounts": [
         {
-          "name": "signer",
-          "writable": true,
-          "signer": true
-        },
-        {
           "name": "poll",
           "writable": true,
           "pda": {
@@ -98,6 +93,11 @@
               }
             ]
           }
+        },
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
         },
         {
           "name": "system_program",
@@ -142,6 +142,7 @@
         },
         {
           "name": "poll",
+          "writable": true,
           "pda": {
             "seeds": [
               {
@@ -153,6 +154,7 @@
         },
         {
           "name": "candidate",
+          "writable": true,
           "pda": {
             "seeds": [
               {
@@ -169,11 +171,11 @@
       ],
       "args": [
         {
-          "name": "_candidate_name",
+          "name": "candidate_name",
           "type": "string"
         },
         {
-          "name": "_poll_id",
+          "name": "poll_id",
           "type": "u64"
         }
       ]
